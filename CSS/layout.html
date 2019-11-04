@@ -3,12 +3,52 @@
     <title>Layout</title>
 </head>
 <body>
-    <div style="text-align: center; 
+    <div style="text-align: center;
                 background-color: rgba(0, 255, 255, 0.815);">
         居中显示
     </div>
 
-    <div style="background-color: bisque; margin-left: 10cm; margin-right: 10cm;">
+    <div style="background-color: bisque; max-width: 15cm; margin: 0 auto;">    <!-- margin值为auto时， 表示居中-->
         限制div宽度
+    </div>
+
+    <div style="width: 20cm; margin: 0 auto;">
+        部分标签默认就是行内元素，如链接：<a href="http://www.qq.com">qq</a>，还有 <span style="background-color: blueviolet">span标签</span> 等
+    </div>
+
+    <div style="background-color: brown; max-width: 200px; margin: 20px auto;">
+        <div>普通盒模型</div>
+        <div>Margin是盒外边距</div>
+    </div>
+    <div style="background-color: brown; max-width: 200px; margin: 0px auto; padding: 30px;">
+        <div>带Padding的盒模型</div>
+        <div>Padding是盒内边距</div>
+    </div>
+    <div style="background-color: brown; max-width: 200px; margin: 20px auto; padding: 30px; border: solid blue 10px;">
+        <div>带Border的盒模型</div>
+    </div>
+    
+    <div style="background-color: aquamarine; max-width: 200px; margin: 20px auto; 
+    position: static;">
+        我是一个默认文档流
+    </div>
+
+    <!-- top、left、right、bottom属性可设置，该例子表示像上移动25像素，向左移30像素 -->
+    <div style="background-color: aquamarine; max-width: 200px; margin: 20px auto; 
+    position: relative; top: -25px; left: -30px;">
+        我是一个相对定位元素
+    </div>
+    
+    <!-- absolute: 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 -->
+    <div style="background-color: beige; position: absolute; top: 200px; left: 100px; width: 200px; height: 100px;">
+        <div style="background-color: aquamarine; max-width: 200px; margin: 0px auto; 
+        position: absolute; top: 10px; left: 10px;">
+            我是一个绝对定位元素
+        </div>
+
+        <div style="background-color: aquamarine; max-width: 200px; margin: 20px auto; 
+        position: fixed; top: 100px; left: 30px;">
+            我是一个相对浏览器的绝对定位元素，即使浏览器滚动，我也不会动
+        </div>
     </div>
 </body>
