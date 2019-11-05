@@ -99,10 +99,43 @@
             我们是使用inline-block来布局的
         </div>
         <div style="display: inline-block; width: 200px; height: 100px; background-color: gray; margin: 1em;">
-            我们是使用inline-block来布局的
+            inline-block布局的稍详介绍：<a href="https://zhuanlan.zhihu.com/p/31856017">inline-block</a>
         </div>
-        <div style="display: inline-block; width: 200px; height: 100px; background-color: gray; margin: 1em;">
-            我们是使用inline-block来布局的
+        <div style="display: inline-block; width: 200px; height: 100px; background-color: gray; margin: 1em; vertical-align: top;">
+            我的文字比较长，需要使用vertical-align来指定垂直对齐方式。否则布局可能异常。<a href="https://www.w3school.com.cn/cssref/pr_pos_vertical-align.asp">详情</a>
+        </div>
+        <div style="display: inline-block; width: 200px; height: 100px; background-color: gray; margin: 1em; vertical-align: top;">
+            Baseline这块也需要特别注意 <a href="https://www.fengerzh.com/vertical-align-baseline/">详情</a>
+        </div>
+    </div>
+
+    <div style="background-color: bisque; width: 500px; height: 150px; margin: 1em auto; columns: 3;">
+        columns: 3 我是分多列展示的我是分多列展示的我是分多列展示的我是分多列展示的我是分多列展示的我
+        是分多列展示的我是分多列展示的我是分多列展示的我是分多列展示的我是分多列展示的我是
+        分多列展示的我是分多列展示的我是分多列展示的
+    </div>
+
+    <div style="margin: 15px; border: solid coral 5px; width: 100%; height: 150px; display: flex;">
+        <div style="flex: initial; width: 200px; min-width: 100px; background-color: lawngreen;">
+            宽度默认为200，最小为100
+        </div>
+        <div style="width: 200px; background-color: lemonchiffon; text-align: center;">
+            宽度固定为200
+        </div>
+        <div style="flex: 1; background-color: rgb(205, 255, 234);">
+            flex 1，表示占据拆分成n分后的1份，n为所有flex子元素的和
+        </div>
+        <div style="flex: 2; background-color: lightslategrey;">
+            flex 2，表示占据拆分成n分后的2份
+        </div>
+    </div>
+
+    <div style="margin: 15px; border: solid coral 5px; width: 100%; height: 150px; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 150px; background-color: lime; margin: 1em;">
+            flex布局中的水平居中，使用justify-content控制
+        </div>
+        <div style="width: 150px; background-color: lime; margin: 1em;">
+            flex布局中的垂直居中，使用align-items控制
         </div>
     </div>
 </body>
