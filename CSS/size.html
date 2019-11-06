@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>Size</title>
+</head>
+<body>
+    <div style="border: solid rebeccapurple 5px; width: 420px; overflow: auto; display: inline-block;">
+        <div style="background-color: beige; width: 200px; height: 100vh; float: left;">
+            <p>我是用的100vh作为高度，高度会占满浏览器高度</p>
+            <p>
+                <li>vw: 窗口宽度</li>
+                <li>vh: 窗口高度</li>
+                <li>vmin: vw和vh最小的那个</li>
+                <li>vmax: vw和vh最大的那个</li>
+            </p>
+        </div>
+        <div style="background-color: aquamarine; width: 200px; height: 100%; margin: 0px 0px 0px 210px;">
+            <div>我是用的100%作为高度，高度并不会占满窗口。</div>
+            <div>Height不生效的原因，可以这儿查看: <a href="https://www.cnblogs.com/yugege/p/9264319.html">深入理解CSS系列（二）：为什么height:100%不生效？</a></div>
+            <p>网上有种观点认为，如果父元素height: auto，又要让子元素height:100%生效的话，会使得布局进入一种死循环</p>
+        </div>
+    </div>
+
+    <div style="border: solid rebeccapurple 5px; width: 420px; height: 100vh; margin: 0 0 0 20px; overflow: auto; display: inline-block;">
+            <div style="background-color: beige; width: 200px; height: 100vh; float: left;">
+                <p>我是用的100vh作为高度，高度会等浏览器高度</p>
+                <p>
+                    此时，如果父窗口不够高，我就会超出父窗口的高度
+                </p>
+            </div>
+            <div style="background-color: aquamarine; width: 200px; height: 100%; margin: 0px 0px 0px 210px;">
+                <div>我是用的100%作为高度，高度也会等于父窗口的高度</div>
+                <p>父窗口定义：height: 100vh; 当父窗口有显示高度时，子元素用%百分比高度就有意义了</p>
+            </div>
+        </div>
+</body>
