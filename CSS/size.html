@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <head>
     <title>Size</title>
+    <style>
+        /* 这儿定义了根元素字号的大小 */
+        :root {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
+
 <body>
     <div style="border: solid rebeccapurple 5px; width: 420px; overflow: auto; display: inline-block;">
         <div style="background-color: beige; width: 200px; height: 100vh; float: left;">
@@ -21,15 +28,45 @@
     </div>
 
     <div style="border: solid rebeccapurple 5px; width: 420px; height: 100vh; margin: 0 0 0 20px; overflow: auto; display: inline-block;">
-            <div style="background-color: beige; width: 200px; height: 100vh; float: left;">
-                <p>我是用的100vh作为高度，高度会等浏览器高度</p>
-                <p>
-                    此时，如果父窗口不够高，我就会超出父窗口的高度
-                </p>
+        <div style="background-color: beige; width: 200px; height: 100vh; float: left;">
+            <p>我是用的100vh作为高度，高度会等浏览器高度</p>
+            <p>
+                此时，如果父窗口不够高，我就会超出父窗口的高度
+            </p>
+        </div>
+        <div style="background-color: aquamarine; width: 200px; height: 100%; margin: 0px 0px 0px 210px;">
+            <div>我是用的100%作为高度，高度也会等于父窗口的高度</div>
+            <p>父窗口定义：height: 100vh; 当父窗口有显示高度时，子元素用%百分比高度就有意义了</p>
+        </div>
+    </div>
+
+    <div style="border: solid rebeccapurple 5px; width: 420px; height: 100vh; margin: 0 0 0 20px; overflow: auto; display: inline-block;">
+        <div style="margin: 0 0 0 10px;">
+            <!-- px相关 -->
+            <li>px是相对于显示器屏幕分辨率而定的</li>
+            <div style="background-color: rebeccapurple; width: 30px; height: 30px; float: left;"></div> <- 这个是30px的
+
+            <span style="display: inline-block; width: 400px; height: 2px; vertical-align: middle; background-color: seagreen;"></span>
+
+            <!-- em相关 -->
+            <li style="clear: both;">em是相对长度，等于当前对象内文本的字体尺寸</li>
+            <div style="background-color: rebeccapurple; width: 2em; height: 2em; float: left;">
+                福
+            </div> <- 这个是2em，即两个字号大小的
+            <p></p>
+            <div style="font-size: 50px; background-color: rebeccapurple; width: 2em; height: 2em; float: left; clear: left; margin: 5px 5px 0 0;">
+                福
+            </div> <- 这个是2em，因为字号变了导致的
+            <div>em会继承父元素的字体大小</div>
+
+            <span style="display: inline-block; width: 400px; height: 2px; vertical-align: middle; background-color: seagreen;"></span>
+            <li>rem是 root em 的含义，即只与根元素的字体大小相关，不与子元素相关</li>
+            <div style="font-size: 50px; background-color: rebeccapurple; width: 5rem; height: 5rem; float: left; clear: left; margin: 5px 5px 0 0;">
+                福
             </div>
-            <div style="background-color: aquamarine; width: 200px; height: 100%; margin: 0px 0px 0px 210px;">
-                <div>我是用的100%作为高度，高度也会等于父窗口的高度</div>
-                <p>父窗口定义：height: 100vh; 当父窗口有显示高度时，子元素用%百分比高度就有意义了</p>
+            <div> <- 这个是5rem，字号变了并没有导致rem变化 
+                <p>详细使用参见：<a href="https://zhuanlan.zhihu.com/p/39811831">如何更愉快地使用rem</a></p>
             </div>
         </div>
+    </div>
 </body>
